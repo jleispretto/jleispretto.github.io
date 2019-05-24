@@ -4,5 +4,18 @@
 <h1>Juan's Best Memes</h1>
   <p><bold>Sports memes: </bold></p>
   <img src="memes/lebron_meme.PNG" height="42" width="42">
+  <script> 
+  var folder = "memes/sports_memes";
+  $.ajax({
+    url : folder,
+    success: function (data) {
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                $("body").append( "<img src='"+ folder + val +"'>" );
+            } 
+        });
+    }
+  });
+  </script>
 </body>
 </html>
