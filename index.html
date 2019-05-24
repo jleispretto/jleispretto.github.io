@@ -2,23 +2,10 @@
 <html>
 <body>
   <h1>Juan's Best Memes</h1>
-    <p><bold>Another New Sports memes: </bold></p>
+    <p><bold>Sports Memes: </bold></p>
     <img src="memes/sports_memes/lebron_meme.PNG" height="250" width="250">
-    <script>
-      alert("hello!");
-      var dir = "memes/sports_memes/";
-      var fileextension = ".png";
-      $.ajax({
-        //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-        url: dir,
-        success: function (data) {
-            //List all .png file names in the page
-            $(data).find("a:contains(" + fileextension + ")").each(function () {
-                var filename = this.href.replace(window.location.host, "").replace("http://", "");
-                $("body").append("<img src='" + dir + filename + "'>");
-            });
-        }
-      });
-    </script>
+  
+    <p><bold>Sports Memes: </bold></p>
+    <img src="memes/sports_memes/lebron_meme.PNG" height="250" width="250">
 </body>
 </html>
