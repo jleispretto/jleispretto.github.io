@@ -3,19 +3,14 @@
 <body>
 <h1>Juan's Best Memes</h1>
   <p><bold>Another New Sports memes: </bold></p>
-  <img src="memes/sports_memes/lebron_meme.PNG" height="42" width="42">
-  <script> 
-  var folder = "memes/sports_memes";
-  $.ajax({
-    url : folder,
-    success: function (data) {
-        $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                $("body").append( "<img src='"+ folder + val +"'>" );
-            } 
-        });
+  <img src="memes/sports_memes/lebron_meme.PNG" height="250" width="250">
+  <?php
+    $files = scandir('memes/sports_memes/');
+    foreach($files as $file) {
+        if($file !== "." && $file !== "..") {
+            echo "<img src='$file' />";
+        }
     }
-  });
-  </script>
+  ?>
 </body>
 </html>
